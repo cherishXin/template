@@ -1,0 +1,17 @@
+.page-404 {
+  animation: pg404 infinite 10s linear;
+  width: rem(100px);
+  height: rem(100px);
+  line-height: rem(100px);
+  font-size: rem(50px);
+  text-align: center;
+  margin: 50% auto;
+  transform: translate(0, -50%);
+  color: $green;
+}
+
+@keyframes pg404 {
+  0% { transform: scale(1); }
+  50% { transform: scale(3); }
+  100% { transform: scale(1); }
+}

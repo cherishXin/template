@@ -1,0 +1,11 @@
+@mixin bgimg($url) {
+  background: url($url) center no-repeat;
+  background-size: cover;
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break:break-all;
+}
