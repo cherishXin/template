@@ -11,6 +11,7 @@
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
     "babel-loader": "8.0.5",
+    "babel-plugin-import": "^1.11.0",
     "babel-plugin-named-asset-import": "^0.3.1",
     "babel-preset-react-app": "^7.0.1",
     "bfj": "6.1.1",
@@ -34,7 +35,10 @@
     "jest-pnp-resolver": "1.0.2",
     "jest-resolve": "23.6.0",
     "jest-watch-typeahead": "^0.2.1",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "0.5.0",
+    "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.2.1",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -46,8 +50,11 @@
     "react-app-polyfill": "^0.2.1",
     "react-dev-utils": "^7.0.3",
     "react-dom": "^16.8.1",
+    "react-router-config": "^4.4.0-beta.6",
+    "react-router-dom": "^4.3.1",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
+    "sass-resources-loader": "^2.0.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.2",
     "url-loader": "1.1.2",
@@ -61,15 +68,6 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
@@ -113,11 +111,6 @@
     "watchPlugins": [
       "/Users/jinxin/work/模板/template1/node_modules/jest-watch-typeahead/filename.js",
       "/Users/jinxin/work/模板/template1/node_modules/jest-watch-typeahead/testname.js"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
     ]
   }
 }

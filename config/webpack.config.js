@@ -23,6 +23,7 @@ const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
+const theme = require('./theme');
 
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
@@ -39,6 +40,8 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less$/;
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -103,12 +106,27 @@ module.exports = function(webpackEnv) {
       },
     ].filter(Boolean);
     if (preProcessor) {
-      loaders.push({
+      let loader = {
         loader: require.resolve(preProcessor),
         options: {
           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
         },
-      });
+      };
+      if (preProcessor === "less-loader") {
+        loader.options.modifyVars = theme;
+        loader.options.javascriptEnabled = true;
+      }
+      loaders.push(loader);
+      if (preProcessor === "sass-loader") {
+        const srlLoader = {
+          loader: 'sass-resources-loader',
+            options: {
+            resources: path.resolve('src/style/index.scss')
+          }
+        };
+        loaders.push(srlLoader);
+      }
+
     }
     return loaders;
   };
@@ -265,6 +283,7 @@ module.exports = function(webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+        '@': paths.appSrc
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -301,7 +320,7 @@ module.exports = function(webpackEnv) {
               options: {
                 formatter: require.resolve('react-dev-utils/eslintFormatter'),
                 eslintPath: require.resolve('eslint'),
-                
+
               },
               loader: require.resolve('eslint-loader'),
             },
@@ -334,7 +353,7 @@ module.exports = function(webpackEnv) {
                 customize: require.resolve(
                   'babel-preset-react-app/webpack-overrides'
                 ),
-                
+
                 plugins: [
                   [
                     require.resolve('babel-plugin-named-asset-import'),
@@ -373,7 +392,7 @@ module.exports = function(webpackEnv) {
                 ],
                 cacheDirectory: true,
                 cacheCompression: isEnvProduction,
-                
+
                 // If an error happens in a package, it's possible to be
                 // because it was compiled. Thus, we don't want the browser
                 // debugger to show the original code. Instead, the code
@@ -451,6 +470,30 @@ module.exports = function(webpackEnv) {
                   getLocalIdent: getCSSModuleLocalIdent,
                 },
                 'sass-loader'
+              ),
+            },
+            {
+              test: lessRegex,
+              exclude: lessModuleRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                },
+                'less-loader'
+              ),
+              sideEffects: true
+            },
+            {
+              test: lessModuleRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  modules: true,
+                  getLocalIdent: getCSSModuleLocalIdent,
+                },
+                'less-loader'
               ),
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
