@@ -27,7 +27,8 @@ const theme = require('./theme');
 
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
-const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
+// const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
+const shouldUseSourceMap = false;
 // Some apps do not need the benefits of saving a web request, so not inlining the chunk
 // makes for a smoother build process.
 const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
@@ -204,6 +205,8 @@ module.exports = function(webpackEnv) {
             compress: {
               ecma: 5,
               warnings: false,
+              drop_debugger: true,
+              drop_console: true,
               // Disabled because of an issue with Uglify breaking seemingly valid code:
               // https://github.com/facebook/create-react-app/issues/2376
               // Pending further investigation:
