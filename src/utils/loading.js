@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ActivityIndicator } from 'antd';
+import { Spin, Icon } from 'antd';
 
 const loading = () => {
   let loadingCount = 0;
@@ -15,7 +15,7 @@ const loading = () => {
   const show = () => {
     if (loadingCount === 0) {
       dom = create();
-      ReactDOM.render(<ActivityIndicator toast text="Loading" />, dom);
+      ReactDOM.render(<Spin indicator={<Icon type="Loading" style={{ fontSize: 24 }} spin />} />, dom);
     }
     loadingCount++;
   };

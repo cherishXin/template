@@ -109,7 +109,7 @@ module.exports = function(webpackEnv) {
       let loader = {
         loader: require.resolve(preProcessor),
         options: {
-          sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
+          sourceMap: isEnvProduction && shouldUseSourceMap,
         },
       };
       if (preProcessor === "less-loader") {

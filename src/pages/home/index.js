@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Header } from '@/components';
+import Counter from './components';
 import './index.scss';
 
 class Page extends PureComponent {
@@ -12,6 +13,7 @@ class Page extends PureComponent {
     return (
       <div className="home">
         <Header />
+        <Counter />
       </div>
     );
   }
