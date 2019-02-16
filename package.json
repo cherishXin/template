@@ -114,10 +114,6 @@
       "web.jsx",
       "jsx",
       "node"
-    ],
-    "watchPlugins": [
-      "/Users/jinxin/work/模板/template1/node_modules/jest-watch-typeahead/filename.js",
-      "/Users/jinxin/work/模板/template1/node_modules/jest-watch-typeahead/testname.js"
     ]
   }
 }

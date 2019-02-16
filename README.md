@@ -11,50 +11,50 @@
 ├── config                                        配置相关
 │   ├── theme.js                                  主题配置
 │   └── webpack.config.js                         webpack配置
-├── package.json                                  项目简要描述
-├── public                                        项目简要描述
-│   ├── favicon.ico                               项目简要描述
-│   └── index.html                                项目简要描述
-├── scripts                                       项目简要描述
-├── src                                           项目简要描述
-│   ├── App.js                                    项目简要描述
-│   ├── axios                                     项目简要描述
-│   ├── components                                项目简要描述
-│   │   ├── header                                项目简要描述
-│   │   └── index.js                              项目简要描述
-│   ├── configStore.js                            项目简要描述
-│   ├── images                                    项目简要描述
-│   ├── index.js                                  项目简要描述
-│   ├── pages                                     项目简要描述
-│   │   ├── error                                 项目简要描述
-│   │   │   ├── index.js                          项目简要描述
-│   │   │   └── index.scss                        项目简要描述
-│   │   ├── home                                  项目简要描述
-│   │   │   ├── components                        项目简要描述
-│   │   │   │   └── index.js                      项目简要描述
-│   │   │   ├── index.js                          项目简要描述
-│   │   │   └── index.scss                        项目简要描述
-│   │   └── special                               项目简要描述
-│   │       ├── index.js                          项目简要描述
-│   │       └── store                             项目简要描述
-│   │           ├── action.js                     项目简要描述
-│   │           ├── constants.js                  项目简要描述
-│   │           ├── index.js                      项目简要描述
-│   │           ├── model.js                      项目简要描述
-│   │           └── reducer.js                    项目简要描述
-│   ├── routes                                    项目简要描述
-│   ├── store                                     项目简要描述
-│   │   ├── common                                项目简要描述
-│   │   ├── index.js                              项目简要描述
-│   │   └── reducers.js                           项目简要描述
-│   ├── style                                     项目简要描述
-│   │   ├── common.scss                           项目简要描述
-│   │   ├── config.scss                           项目简要描述
-│   │   ├── index.scss                            项目简要描述
-│   │   ├── mixin.scss                            项目简要描述
-│   │   ├── rem.scss                              项目简要描述
-│   │   └── reset.scss                            项目简要描述
-│   └── utils                                     项目简要描述
-│       ├── loading.js                            项目简要描述
-│       └── storage.js                            项目简要描述
-└── yarn.lock                                     项目简要描述
+├── package.json                                  项目依赖
+├── public                                        静态资源
+│   ├── favicon.ico                               ico
+│   └── index.html                                页面入口
+├── scripts                                       环境相关
+├── src                                           业务代码
+│   ├── App.js                                    App.js
+│   ├── axios                                     axios简单封装
+│   ├── components                                公共组件
+│   │   ├── header                                公共header组件
+│   │   └── index.js                              公共组件入口js
+│   ├── configStore.js                            redux相关配置
+│   ├── images                                    图片
+│   ├── index.js                                  入口js
+│   ├── pages                                     页面
+│   │   ├── error                                 error页面
+│   │   │   ├── index.js                          error js
+│   │   │   └── index.scss                        error scss
+│   │   ├── home                                  home页面
+│   │   │   ├── components                        home 组件
+│   │   │   │   └── index.js                      home 组件 入口js
+│   │   │   ├── index.js                          home js
+│   │   │   └── index.scss                        home scss
+│   │   └── special                               special 页面
+│   │       ├── index.js                          special js
+│   │       └── store                             special store
+│   │           ├── action.js                     special action
+│   │           ├── constants.js                  special constants
+│   │           ├── index.js                      special store 入口js
+│   │           ├── model.js                      special 接口地址
+│   │           └── reducer.js                    special reducer
+│   ├── routes                                    路由routes
+│   ├── store                                     store
+│   │   ├── common                                公共store
+│   │   ├── index.js                              store配置
+│   │   └── reducers.js                           reducers
+│   ├── style                                     styles
+│   │   ├── common.scss                           公共scss
+│   │   ├── config.scss                           颜色等配置scss
+│   │   ├── index.scss                            styles 入口
+│   │   ├── mixin.scss                            mixin
+│   │   ├── rem.scss                              px to rem
+│   │   └── reset.scss                            reset scss
+│   └── utils                                     工具函数
+│       ├── loading.js                            loading
+│       └── storage.js                            本地存储
+└── yarn.lock                                     依赖安装
