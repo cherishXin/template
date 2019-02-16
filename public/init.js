@@ -1,5 +1,6 @@
 window.webSetting = {
   // 设计稿屏幕宽度
+
   designWidth: 1920,
   limitWidth: 1440
 };

@@ -1,6 +1,6 @@
 {
-  "name": "template1",
-  "version": "0.1.0",
+  "name": "template",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@babel/core": "7.2.2",
