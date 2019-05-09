@@ -122,7 +122,7 @@ module.exports = function(webpackEnv) {
         const srlLoader = {
           loader: 'sass-resources-loader',
             options: {
-            resources: path.resolve('src/style/index.scss')
+            resources: path.resolve('src/style/global.scss')
           }
         };
         loaders.push(srlLoader);

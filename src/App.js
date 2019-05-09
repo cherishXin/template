@@ -4,6 +4,7 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 import { renderRoutes } from 'react-router-config';
 import configRoutes from '@/routes';
 import { Switch } from 'react-router-dom';
+import "@/style/index.scss";
 
 class Page extends PureComponent {
   constructor(props) {
